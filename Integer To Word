@@ -1,0 +1,234 @@
+#include <stdio.h>
+int main() {
+    int num,i=0,count,a,b=0,reverse,last,check,threes,MilzeroCheck,MilzeroTrue=0;
+    int BilzeroCheck,BilzeroTrue=0;
+    bool bil=false,mil=false,thoustop=false,milstop=false;
+    printf("Enter a number: ");
+    scanf("%d",&num);
+    
+    count = num;
+    while(count>0){
+        count = count/10;
+        i++;
+    }
+    count = i;
+    //printf("%d\n",count);
+    
+    reverse = num;
+    while(reverse>0){
+        a = reverse%10;
+        b = b*10 + a;
+        reverse = reverse/10;
+    }
+    reverse = b;
+    //printf("%d\n",reverse);
+    while(count>0){
+        threes = count;
+        check = count%3;
+        last = reverse%10;
+        BilzeroCheck = last;
+        if(count>6){
+            if(bil){
+                while(BilzeroCheck>0){
+                    a = BilzeroCheck%10;
+                    BilzeroTrue += a;
+                    BilzeroCheck = BilzeroCheck/10;
+                }
+                if(BilzeroTrue == 0){
+                    milstop = true;
+                    mil = true;
+                }else{
+                    milstop = false;
+                    mil = false;
+                }
+            }
+        }
+        MilzeroCheck = last;
+        if(count>3){
+            if(mil){
+                while(MilzeroCheck>0){
+                    a = MilzeroCheck%10;
+                    MilzeroTrue += a;
+                    MilzeroCheck = MilzeroCheck/10;
+                }
+                if(MilzeroTrue == 0){
+                    thoustop = true;
+                }else
+                    thoustop = false;
+            }
+        }
+        switch(check){
+            case 1:
+                switch(last){
+                    case 9:
+                        printf("nine ");
+                        break;
+                    case 8:
+                        printf("eight ");
+                        break;
+                    case 7:
+                        printf("seven ");
+                        break;
+                    case 6:
+                        printf("six ");
+                        break;
+                    case 5:
+                        printf("five ");
+                        break;
+                    case 4:
+                        printf("four ");
+                        break;
+                    case 3:
+                        printf("three ");
+                        break;
+                    case 2:
+                        printf("two ");
+                        break;
+                    case 1:
+                        printf("one ");
+                        break;
+                    case 0:
+                        printf("");
+                        break;
+                    }
+                count--;    
+                break;
+            case 2:
+                switch(last){
+                    case 9:
+                        printf("ninety ");
+                        count--;
+                        break;
+                    case 8:
+                        printf("eighty ");
+                        count--;
+                        break;
+                    case 7:
+                        printf("seventy ");
+                        count--;
+                        break;
+                    case 6:
+                        printf("sixty ");
+                        count--;
+                        break;
+                    case 5:
+                        printf("fifty ");
+                        count--;
+                        break;
+                    case 4:
+                        printf("fourty ");
+                        count--;
+                        break;
+                    case 3:
+                        printf("thirty ");
+                        count--;
+                        break;
+                    case 2:
+                        printf("twenty ");
+                        count--;
+                        break;
+                    case 0:
+                        printf("");
+                        count--;
+                        break;
+                    case 1:
+                        reverse = reverse/10;
+                        last = reverse%10;
+                        switch(last){
+                            case 9:
+                                printf("nineteen ");
+                                break;
+                            case 8:
+                                printf("eightteen ");
+                                break;
+                            case 7:
+                                printf("seventeen ");
+                                break;
+                            case 6:
+                                printf("sixteen ");
+                                break;
+                            case 5:
+                                printf("fifteen ");
+                                break;
+                            case 4:
+                                printf("fourteen ");
+                                break;
+                            case 3:
+                                printf("thirteen ");
+                                break;
+                            case 2:
+                                printf("twelve ");
+                                break;
+                            case 1:
+                                printf("eleven ");
+                                break;
+                            case 0:
+                                printf("ten ");
+                                break;
+                            }
+                    threes--;
+                    count -= 2;
+                    break;
+                    }
+                break;
+            case 0:
+                switch(last){
+                    case 1:
+                        printf("one hundred ");
+                        break;
+                    case 2:
+                        printf("two hundred ");
+                        break;
+                    case 3:
+                        printf("three hundred ");
+                        break;
+                    case 4:
+                        printf("four hundred ");
+                        break;
+                    case 5:
+                        printf("five hundred ");
+                        break;
+                    case 6:
+                        printf("six hundred ");
+                        break;
+                    case 7:
+                        printf("seven hundred ");
+                        break;
+                    case 8:
+                        printf("eight hundred ");
+                        break;
+                    case 9:
+                        printf("nine hundred ");
+                        break;
+                    case 0:
+                        printf("");
+                        break;
+                }
+                count--;
+                break;
+        }
+        switch(threes){
+            case 4:
+                if(thoustop){
+                    break;
+                }else
+                    printf("thousand ");
+                break;
+            case 7:
+                if(milstop){
+                    break;
+                }else
+                    printf("million ");
+                mil = true;
+                break;
+            case 10:
+                printf("billion ");
+                bil = true;
+                break;
+        }
+        threes--;
+        reverse = reverse/10;
+    }
+    printf("\n\nProgram Terminated");
+    return 0;
+}
