@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <stdbool.h>
 int main() {
     int num,i=0,count,a,b=0,reverse,last,check,threes,MilzeroCheck,MilzeroTrue=0;
     int BilzeroCheck,BilzeroTrue=0;
     bool bil=false,mil=false,thoustop=false,milstop=false;
+    
     printf("Enter a number: ");
     scanf("%d",&num);
     
@@ -22,6 +24,7 @@ int main() {
     }
     reverse = b;
     //printf("%d\n",reverse);
+    
     while(count>0){
         threes = count;
         check = count%3;
@@ -97,39 +100,30 @@ int main() {
                 switch(last){
                     case 9:
                         printf("ninety ");
-                        count--;
                         break;
                     case 8:
                         printf("eighty ");
-                        count--;
                         break;
                     case 7:
                         printf("seventy ");
-                        count--;
                         break;
                     case 6:
                         printf("sixty ");
-                        count--;
                         break;
                     case 5:
                         printf("fifty ");
-                        count--;
                         break;
                     case 4:
                         printf("fourty ");
-                        count--;
                         break;
                     case 3:
                         printf("thirty ");
-                        count--;
                         break;
                     case 2:
                         printf("twenty ");
-                        count--;
                         break;
                     case 0:
                         printf("");
-                        count--;
                         break;
                     case 1:
                         reverse = reverse/10;
@@ -166,10 +160,11 @@ int main() {
                                 printf("ten ");
                                 break;
                             }
-                    threes--;
-                    count -= 2;
-                    break;
+                        threes--;
+                        count--;
+                        break;
                     }
+                count--;
                 break;
             case 0:
                 switch(last){
