@@ -33,7 +33,7 @@ int main() {
     printf("Input elements in the second matrix :\n");
     for(i=0;i<Row_Scnd;i++){
         for(j=0;j<Col_Scnd;j++){
-            printf("element - [%d,[%d] : ",i,j);
+            printf("element - [%d],[%d] : ",i,j);
             scanf("%d",&scndArray[i][j]);
         }
     }
@@ -62,7 +62,7 @@ int main() {
     for(i=0;i<Row_Fst;i++){
         for(j=0;j<Col_Fst;j++){
             if(fstArray[i][j]!=scndArray[i][j])
-            notEqual = 1;
+                notEqual = 1;
         }
     }
     if(notEqual==1)
