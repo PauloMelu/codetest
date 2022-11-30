@@ -2,11 +2,11 @@
 
 int main() {
     
+    //take number of rows and columns of both matrices
     int Row_Fst,Col_Fst,Row_Scnd,Col_Scnd;
     printf("Input Rows and Columns of the 1st matrix : ");
     scanf("%d",&Row_Fst);
     scanf("%d",&Col_Fst);
-    
     printf("Input Rows and Columns of the 2nd matrix : ");
     scanf("%d",&Row_Scnd);
     scanf("%d",&Col_Scnd);
@@ -17,7 +17,7 @@ int main() {
         return 0;
     }
     
-    //inputs of first array
+    //inputs of first matrix
     int fstArray[Row_Fst][Col_Fst];
     int i,j;
     printf("Input elements in the first matrix :\n");
@@ -28,7 +28,7 @@ int main() {
         }
     }
     
-    //inputs of second array
+    //inputs of second matrix
     int scndArray[Row_Scnd][Col_Scnd];
     printf("Input elements in the second matrix :\n");
     for(i=0;i<Row_Scnd;i++){
