@@ -1,7 +1,6 @@
 //decrypt
 #include <stdio.h>
 #include <string.h>
-
 int main() {
     char array[50];
     char lower[50];
@@ -15,11 +14,15 @@ int main() {
     scanf("%d",&shift);
 
     for(int i=0;i<strlen(array);i++){
-        if(tolower(array[i])-shift-97<0)
-            index = 26 + tolower(array[i])-shift-97;
-        else
-            index = tolower(array[i])-shift-97;
-        printf("%c",small[index]);
+        if(array[i]==' ')
+            printf(" ");
+        else{
+            if(tolower(array[i])-shift-97<0)
+                index = 26 + tolower(array[i])-shift-97;
+            else
+                index = tolower(array[i])-shift-97;
+            printf("%c",small[index]);
+        }
     }
     return 0;
 }
