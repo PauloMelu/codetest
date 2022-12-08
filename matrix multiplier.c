@@ -12,8 +12,8 @@ int main() {
     printf("Inputs of first matrix:\n");
     int array1[row1][col1];
     for(int i=0;i<row1;i++){
+        printf("Row %d: ",i);
         for(int j=0;j<col1;j++){
-            printf("Element [%d][%d] - ",i,j);
             scanf("%d",&array1[i][j]);
         }
     }
@@ -22,8 +22,8 @@ int main() {
     printf("Inputs of second matrix:\n");
     int array2[row2][col2];
     for(int i=0;i<row2;i++){
+        printf("Row %d: ",i);
         for(int j=0;j<col2;j++){
-            printf("Element [%d][%d] - ",i,j);
             scanf("%d",&array2[i][j]);
         }
     }
