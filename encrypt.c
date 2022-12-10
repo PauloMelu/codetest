@@ -1,5 +1,7 @@
 //encrypt with incremental shifting
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h> 
 int main() {
     char word[50];
     int shift,incrementvalue,increment=0;
