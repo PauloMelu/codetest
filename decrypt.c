@@ -6,7 +6,7 @@ int main() {
     char word[50];
     int shift,incrementvalue,increment=0;
     
-    printf("Enter a word to encrypt: ");
+    printf("Enter a word to decrypt: ");
     scanf("%[^\n]s",&word);
     printf("Shift: ");
     scanf("%d",&shift);
