@@ -1,5 +1,7 @@
 // convert letter to integer
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h> 
 int main() {
     char phrase[50];
     printf("Enter the phrase: ");
